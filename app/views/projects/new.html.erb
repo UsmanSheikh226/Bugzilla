@@ -1,0 +1,25 @@
+<form action="/projects" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="...">
+
+  <div>
+    <label for="project_title">Title</label><br>
+    <input type="text" name="project[title]" id="project_title">
+  </div>
+
+  <div>
+    <label for="project_body">Body</label><br>
+    <textarea name="project[body]" id="project_body"></textarea>
+  </div>
+  
+  <div>
+    <label for="project_author">Author</label><br>
+    <input type="text" name="project[author]" id="project_author">
+  </div>
+
+  <div>
+    <input type="submit" name="commit" value="Create Project" data-disable-with="Create Project">
+  </div>
+</form>
+<br />
+    <!-- link back to the list of post -->
+    <a href="/projects">Back to Projects</a>

@@ -1,0 +1,15 @@
+<h1>Welcome to Bugzilla</h1>
+
+<h1>Projects</h1>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <a href="/projects/<%= project.id %>">
+        <%= project.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/projects/new">New Project</a>

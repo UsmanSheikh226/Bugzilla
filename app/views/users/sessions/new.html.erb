@@ -1,26 +1,86 @@
-<h2>Log in</h2>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+h1 {text-align: center;}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+
+input[type=text], input[type=password] {
+  
+  
+  margin: 8px 0;
+  box-sizing: border-box; 
+}
+
+.button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body style="background-color:#f1f1f1">
+<h1 style="background-color:#868EF9">Welcome to Bugzila</h1>
+<h2>Log in Form</h2>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="container">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="container">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="sub">
+  
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 
+
 <%= render "devise/shared/links" %>
+</body>

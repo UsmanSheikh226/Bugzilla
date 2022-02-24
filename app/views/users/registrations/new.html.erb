@@ -23,12 +23,12 @@
 
  <div class="field">
     <%= f.label :Roles %><br />
-    <%= f.label :role, "Manager", :value => "Manager"  %>
-    <%= f.radio_button :role , true%>
-    <%= f.label :role, "Developer", :value => "Developer" %>
-    <%= f.radio_button :role, false, :checked => true %>
-    <%= f.label :role, "QA", :value => "QA" %>
-    <%= f.radio_button :role, false, :checked => true %>
+    <%= f.radio_button :role, :manager%>
+    <%= f.label :role, "Manager", :value => "manager"  %>
+    <%= f.radio_button :role, :developer, :checked => true %>
+    <%= f.label :role, "Developer", :value => "developer" %>
+    <%= f.radio_button :role, :qa, :checked => true %>
+    <%= f.label :role, "QA", :value => "qa" %>
   </div>
 
 

@@ -16,7 +16,7 @@ class ProjectsController < ActionController::Base
   end
 
   def create
-    @project = Project.new(projects_params)
+    @project = Project.new(projects_params.merge(user_id: current_user.id))
     if @project.save
       redirect_to @project
     else

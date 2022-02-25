@@ -1,11 +1,14 @@
-<h1><%= @projects.title %></h1>
+<h1><%= @project.title %></h1>
 
-<p><%= @projects.body %></p>
-<p><%= @projects.author %></p>
+<p><b>Body: </b><%= @project.body %></p>
+<p><b>Author: </b><%= @project.author %></p>
+<p><b>Status: </b><%= @project.status %></p>
+
+
 
 <ul>
-  <li><%= link_to "Edit", edit_project_path(@projects) %></li>
-  <li><%= link_to "Destroy", project_path(@projects), data: {
+  <li><%= link_to "Edit", edit_project_path(@project) %></li>
+  <li><%= link_to "Destroy", project_path(@project), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>

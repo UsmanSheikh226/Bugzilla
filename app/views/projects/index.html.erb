@@ -2,6 +2,11 @@
 
 <h1>Projects</h1>
 
+
+<li><%= link_to "Profile", current_user %></li>
+<%= current_user %>
+<li><%= link_to "Settings", edit_user_registration_path %></li>
+
 <ul>
   <% @projects.each do |project| %>
     <li>

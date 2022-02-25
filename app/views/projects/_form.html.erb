@@ -1,8 +1,8 @@
-<%= form_with model: projects do |form| %>
+<%= form_with model: project do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <% projects.errors.full_messages_for(:title).each do |message| %>
+    <% project.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -10,7 +10,7 @@
   <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
-    <% projects.errors.full_messages_for(:body).each do |message| %>
+    <% project.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -18,9 +18,14 @@
    <div>
     <%= form.label :author %><br>
     <%= form.text_field :author %>
-    <% projects.errors.full_messages_for(:author).each do |message| %>
+    <% project.errors.full_messages_for(:author).each do |message| %>
       <div><%= message %></div>
     <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['New', 'In progress', 'In review', 'Completed']%>
   </div>
 
   <div>

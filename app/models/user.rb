@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  has_many :project
+
   enum role: [:manager, :developer, :qa, :admin]
   after_initialize :set_default_role, :if => :new_record?
 

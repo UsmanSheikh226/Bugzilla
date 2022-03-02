@@ -1,6 +1,7 @@
-class ProjectsController < ActionController::Base
+class ProjectsController < ApplicationController
 
   before_action :authenticate_user!
+
 
   
   def index
@@ -9,14 +10,17 @@ class ProjectsController < ActionController::Base
 
   def show
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
     @project = Project.new(projects_params.merge(user_id: current_user.id))
+   # authorize @project
     if @project.save
       redirect_to @project
     else
@@ -30,6 +34,7 @@ class ProjectsController < ActionController::Base
 
   def update
     @project = Project.find(params[:id])
+    authorize @project
 
     if @project.update(projects_params)
       redirect_to @project

@@ -29,6 +29,12 @@
   </div>
 
   <div>
+  <%= form.label :assigned %><br>
+  <%= form.text_field :assigned %>
+  <%= User.find_by role: 'Lifo'%>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

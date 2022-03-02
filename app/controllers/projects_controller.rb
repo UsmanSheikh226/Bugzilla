@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @bugs = Bug.all
     authorize @project
   end
 

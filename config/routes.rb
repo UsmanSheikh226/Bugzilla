@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root "projects#index"
   resources :users
   resources :projects
+  resources :bugs do
+    resources :comments
+  end
   
   
 

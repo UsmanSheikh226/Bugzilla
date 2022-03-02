@@ -29,12 +29,12 @@
   </div>
 
   <div>
-  <%= form.label :assigned %><br>
-  <%= form.text_field :assigned %>
-  <%= User.find_by role: 'Lifo'%>
-  </div>
+    <%= form.select :status, options_from_collection_for_select(User.developer, 'id', 'email')
+%>
+</select>
+</div>
 
-  <div>
+  <div></div>
     <%= form.submit %>
   </div>
 <% end %>

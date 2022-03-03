@@ -13,6 +13,13 @@
     
   </div>
 
+    <div>
+    <%= form.label :assigned %><br>
+    <%= form.select :assigned, options_from_collection_for_select(User.developer, 'id', 'email')
+%>
+</select>
+</div>
+
      <div>
     <%= form.submit %>
   </div>

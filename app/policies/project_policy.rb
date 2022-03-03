@@ -19,7 +19,7 @@ class ProjectPolicy < ApplicationPolicy
  # end
 
   def show?
-    user.manager? && project.user_id == user.id
+    (user.manager? && project.user_id == user.id) || (project.users.include? user)
   end
 
   def update?

@@ -28,13 +28,12 @@
     <%= form.select :status, ['New', 'In progress', 'In review', 'Completed']%>
   </div>
 
-  <div>
-    <%= form.select :status, options_from_collection_for_select(User.developer, 'id', 'email')
-%>
-</select>
+<div>
+  <%= form.select :user_ids, options_from_collection_for_select(User.all, :id, :email), :prompt => "Select Devs", :multiple => true %>
 </div>
 
-  <div></div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

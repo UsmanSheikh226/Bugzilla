@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @user = User.new
     @bugs = Bug.all
     authorize @project
   end
@@ -54,7 +55,7 @@ class ProjectsController < ApplicationController
   
   private
     def projects_params
-      params.require(:project).permit(:title, :body, :author, :status)
+      params.require(:project).permit(:title, :body, :author, :status, :user_ids)
     end
 
 
